@@ -1,34 +1,8 @@
+install:
+	npm ci
 
-all: help
-
-help:
-	echo help
-
-babel:
-	babel lib/ -d src/
-
-test: babel
-	mocha -R spec
-
-eslint:
-	DEBUG="eslint:cli-engine" eslint .
-
-watch:
-	watchd lib/**.js test/**.js package.json -c 'bake babel'
-
-release: version push publish
-
-version:
-	standard-version -m '%s'
-
-push:
-	git push origin master --tags
+brain-games:
+	node bin/brain-games.js
 
 publish:
 	npm publish --dry-run
-
-install: # установка
-	npm ci
-
-brain-games: # Запуск игры
-	node bin/brain-games.js
