@@ -6,3 +6,9 @@ brain-games:
 
 publish:
 	npm publish --dry-run
+
+test-coverage:
+	make test-coverage
+
+make lint:
+	npx eslint
