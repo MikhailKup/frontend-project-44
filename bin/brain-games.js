@@ -8,4 +8,4 @@ console.log('Welcome to the Brain Games!');
 // Step 3. Greetings
 
 import askUserName from "../src/cli.js";
-askUserName();
+console.log(askUserName());

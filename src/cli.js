@@ -1,3 +1,8 @@
+// These lines make "require" available
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+
 const askUserName = () => {
 	var readlineSync = require('readline-sync');
 	// import readlineSync from 'readline-sync';
@@ -6,3 +11,6 @@ const askUserName = () => {
 }
 
 export default askUserName;
+
+
+// ---------------------------------------------------
