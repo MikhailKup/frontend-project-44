@@ -12,6 +12,6 @@
 
 <!-- 2. Brain-even -->
 ![Запуск команды brain-even](/demo/brain-even_1.jpg)
-![Начало игры](/demo/brain-even_1.jpg)
-![Результат выигрыша](/demo/brain-even_1.jpg)
-![Результат проигрыша](/demo/brain-even_1.jpg)
+![Начало игры](/demo/brain-even_2.jpg)
+![Результат выигрыша](/demo/brain-even_3.jpg)
+![Результат проигрыша](/demo/brain-even_3.jpg)
