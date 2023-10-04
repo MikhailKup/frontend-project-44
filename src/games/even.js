@@ -1,21 +1,6 @@
-#!/usr/bin/env node
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
-
-// Step 1. Greetings
-const greetings = () => {
-	return console.log('Welcome to the Brain Games!');
-};
-greetings();
-
-
-// Step 2. Greetings
-var userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-
-
-// Step 3. Game
 const playBrainEven = () => {
 	console.log('Answer "yes" if the number is even, otherwise answer "no".');
 	for (let i = 0; i < 3; i++) {
@@ -38,4 +23,4 @@ const playBrainEven = () => {
 	}
 	return console.log(`Congratulations, ${userName}!`);
 }
-playBrainEven();
+export default playBrainEven;
