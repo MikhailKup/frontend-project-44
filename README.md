@@ -9,31 +9,55 @@
 <!-- Asciinema -->
 ## Brain-games
 > Работа команды brain-games
+<br>
+
 ![Работа команды brain-games](/demo/brain-games_1.jpg)
 
 
-## Brain-even
-> Запуск команды brain-even
+## Brain-even  
+<br>
+
+> Запуск команды brain-even  
+<br>
+
 ![Запуск команды brain-even](/demo/brain-even_1.jpg)
-> Результат выигрыша
+> Результат выигрыша  
+<br>
+
 ![Результат выигрыша](/demo/brain-even_2.jpg)
-> Результат проигрыша
+> Результат проигрыша  
+<br>
+
 ![Результат проигрыша](/demo/brain-even_3.jpg)
 
 
-## Brain-calc
-> Запуск команды brain-calc
+## Brain-calc  
+
+> Запуск команды brain-calc  
+<br>
+
 ![Запуск команды brain-calc](/demo/brain-calc_1.jpg)
-> Результат выигрыша
+> Результат выигрыша  
+<br>
+
 ![Результат выигрыша](/demo/brain-calc_2.jpg)
-> Результат проигрыша
+> Результат проигрыша  
+<br>
+
 ![Результат проигрыша](/demo/brain-calc_3.jpg)
 
 
-## Brain-gcd
-> Запуск команды brain-calc
+## Brain-gcd  
+
+> Запуск команды brain-calc  
+<br>
+
 ![Запуск команды brain-calc](/demo/brain-gcd_1.jpg)
-> Результат выигрыша
+> Результат выигрыша  
+<br>
+
 ![Результат выигрыша](/demo/brain-gcd_2.jpg)
-> Результат проигрыша
+> Результат проигрыша  
+<br>
+
 ![Результат проигрыша](/demo/brain-gcd_3.jpg)
