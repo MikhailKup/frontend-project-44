@@ -1,13 +1,10 @@
-
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+import readlineSync from 'readline-sync';
 
-const askUserName = () => {
-	var readlineSync = require('readline-sync');
+export const askUserName = () => {
 	var userName = readlineSync.question('May I have your name? ');
-	return `Hello, ${userName}!`;
-}
-
-export default askUserName;
+	return console.log(`Hello, ${userName}!`);
+};
 
 

@@ -1,24 +1,32 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
+import readlineSync from 'readline-sync';
+import { getRandom, getRandomOperator } from "../index.js";
 
-const playBrainCalc = () => {
-	console.log('What is the result of the expression?');
-	for (let i = 0; i < 3; i++) {
-		const operators = ['+', '-', '*'];
-		const randomOperator = Math.floor(Math.random() * operators.length);
-		const randomNumber1 = Math.floor(Math.random() * 10) + 1;
-		const randomNumber2 = Math.floor(Math.random() * 10) + 1;
-		const expression = randomNumber1 + " " + operators[randomOperator] + " " + randomNumber2;
-		console.log(`Question: ${expression}`);
-		var userAnswear = readlineSync.question('Your answer: ');
-		if (+userAnswear === eval(expression)) {
-			console.log('Correct!');
-		} else {
-			console.log(`'${userAnswear}' is wrong answer ;(. Correct answer was '${eval(expression)}'.`);
-			console.log(`Let's try again, ${userName}!`);
-			return;
-		}
+
+export const playBrainCalc = () => {
+	const randomOperator = getRandomOperator();
+	const randomNumber1 = getRandom();
+	const randomNumber2 = getRandom();
+
+	let correctAnwear;
+	switch (randomOperator) {
+		case '+':
+			console.log(`Question: ${randomNumber1} + ${randomNumber2}`);
+			correctAnwear = String(randomNumber1 + randomNumber2);
+			break;
+		case '-':
+			console.log(`Question: ${randomNumber1} - ${randomNumber2}`);
+			correctAnwear = String(randomNumber1 - randomNumber2);
+			break;
+		case '*':
+			console.log(`Question: ${randomNumber1} * ${randomNumber2}`);
+			correctAnwear = String(randomNumber1 * randomNumber2);
+			break;
+		default:
+			break;
 	}
-	return console.log(`Congratulations, ${userName}!`);
-}
-export default playBrainCalc;
+	const userAnswear = readlineSync.question('Your answer: ');
+
+	return [correctAnwear, userAnswear];
+};
