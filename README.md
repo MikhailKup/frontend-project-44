@@ -15,24 +15,17 @@
 ## Brain-even
 > Запуск команды brain-even
 ![Запуск команды brain-even](/demo/brain-even_1.jpg)
-
-> Начало игры
-![Начало игры](/demo/brain-even_2.jpg)
-
 > Результат выигрыша
-![Результат выигрыша](/demo/brain-even_3.jpg)
-
+![Результат выигрыша](/demo/brain-even_2.jpg)
 > Результат проигрыша
-![Результат проигрыша](/demo/brain-even_4.jpg)
+![Результат проигрыша](/demo/brain-even_3.jpg)
 
 
 ## Brain-calc
 > Запуск команды brain-calc
 ![Запуск команды brain-calc](/demo/brain-calc_1.jpg)
-
 > Результат выигрыша
 ![Результат выигрыша](/demo/brain-calc_2.jpg)
-
 > Результат проигрыша
 ![Результат проигрыша](/demo/brain-calc_3.jpg)
 
@@ -40,12 +33,7 @@
 ## Brain-gcd
 > Запуск команды brain-calc
 ![Запуск команды brain-calc](/demo/brain-gcd_1.jpg)
-
-> Начало игры
-![Начало игры](/demo/brain-gcd_2.jpg)
-
 > Результат выигрыша
-![Результат выигрыша](/demo/brain-gcd_3.jpg)
-
+![Результат выигрыша](/demo/brain-gcd_2.jpg)
 > Результат проигрыша
-![Результат проигрыша](/demo/brain-gcd_4.jpg)
+![Результат проигрыша](/demo/brain-gcd_3.jpg)
