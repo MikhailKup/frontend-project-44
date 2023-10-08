@@ -7,8 +7,9 @@ export const getUserName = () => {
 };
 
 // Random Number
-export const getRandom = () => {
-	return Math.floor(Math.random() * 10) + 1;
+export const getRandom = (min, max) => {
+	const num = min + Math.random() * (max + 1 - min);
+	return Math.floor(num);
 };
 
 // Random Operator

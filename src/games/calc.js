@@ -6,8 +6,8 @@ import { getRandom, getRandomOperator } from "../index.js";
 
 export const playBrainCalc = () => {
 	const randomOperator = getRandomOperator();
-	const randomNumber1 = getRandom();
-	const randomNumber2 = getRandom();
+	const randomNumber1 = getRandom(1, 10);
+	const randomNumber2 = getRandom(1, 10);
 
 	let correctAnwear;
 	switch (randomOperator) {

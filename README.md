@@ -15,8 +15,6 @@
 
 
 ## Brain-even  
-<br>
-
 > Запуск команды brain-even  
 <br>
 
@@ -32,7 +30,6 @@
 
 
 ## Brain-calc  
-
 > Запуск команды brain-calc  
 <br>
 
@@ -48,7 +45,6 @@
 
 
 ## Brain-gcd  
-
 > Запуск команды brain-calc  
 <br>
 
@@ -61,3 +57,18 @@
 <br>
 
 ![Результат проигрыша](/demo/brain-gcd_3.jpg)
+
+
+## Brain-progression 
+> Запуск команды brain-progression
+<br>
+
+![Запуск команды brain-progression](/demo/brain-progression_1.jpg)
+> Результат выигрыша  
+<br>
+
+![Результат выигрыша](/demo/brain-progression_2.jpg)
+> Результат проигрыша  
+<br>
+
+![Результат проигрыша](/demo/brain-progression_3.jpg)

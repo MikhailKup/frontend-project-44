@@ -5,5 +5,5 @@ import readlineSync from 'readline-sync';
 
 import { playBrainGCD } from "../src/games/gcd.js";
 import { setGameRules } from "../src/index.js";
-const taskOfCalc = 'Find the greatest common divisor of given numbers.';
-setGameRules(taskOfCalc, playBrainGCD);
+const taskOfGcd = 'Find the greatest common divisor of given numbers.';
+setGameRules(taskOfGcd, playBrainGCD);
