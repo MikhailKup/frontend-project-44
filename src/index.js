@@ -1,44 +1,26 @@
 import readlineSync from 'readline-sync';
 
+const triesCount = 3;
 
-// Get User name
-export const getUserName = () => {
-	return readlineSync.question('May I have your name? ');
+export const playGame = (task, game) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(task);
+  for (let i = 1; i <= triesCount; i += 1) {
+    const [question, correctAnwear] = game();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === correctAnwear) {
+      console.log('Correct!');
+    } else {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`,
+      );
+      return console.log(`Let's try again, ${userName}!`);
+    }
+  }
+  return console.log(`Congratulations, ${userName}!`);
 };
-
-// Random Number
-export const getRandom = (min, max) => {
-	const num = min + Math.random() * (max + 1 - min);
-	return Math.floor(num);
-};
-
-// Random Operator
-export const getRandomOperator = () => {
-	const operators = ['+', '-', '*'];
-	const randomOperator = Math.floor(Math.random() * operators.length);
-	return operators[randomOperator];
-};
-
-
-// Game Rules
-export const setGameRules = (task, game) => {
-	console.log('Welcome to the Brain Games!');
-	const userName = getUserName();
-	console.log(`Hello, ${userName}!`);
-	console.log(task);
-	const triesCount = 3;
-	for (let i = 1; i <= triesCount; i++) {
-		const [correctAnwear, userAnswear] = game();
-		if (userAnswear === correctAnwear) {
-			console.log('Correct!');
-			if (i === triesCount) {
-				console.log(`Congratulations, ${userName}!`);
-				return;
-			}
-		} else {
-			console.log(`'${userAnswear}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`);
-			console.log(`Let's try again, ${userName}!`);
-			return;
-		}
-	}
-};
+export default { playGame };

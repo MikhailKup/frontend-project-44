@@ -1,23 +1,25 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import readlineSync from 'readline-sync';
-import { getRandom } from "../index.js";
+import { playGame } from '../index.js';
+import { getRandomNumber } from '../utilits.js';
 
 export const playBrainGCD = () => {
-	const randomNumber1 = getRandom(1, 10);
-	const randomNumber2 = getRandom(1, 10);
-
-	console.log(`Question: ${randomNumber1}  ${randomNumber2}`);
-	const getGCD = (a, b) => {
-		while (b !== 0) {
-			var temp = b;
-			b = a % b;
-			a = temp;
-		}
-		return a;
-	};
-	const correctAnwear = String(getGCD(randomNumber1, randomNumber2));
-
-	const userAnswear = readlineSync.question('Your answer: ');
-	return [correctAnwear, userAnswear];
+  const task = 'Find the greatest common divisor of given numbers.';
+  const gcdGame = () => {
+    const randomNumber1 = getRandomNumber(1, 10);
+    const randomNumber2 = getRandomNumber(1, 10);
+    const question = `${randomNumber1} ${randomNumber2}`;
+    const getGCD = (a, b) => {
+      let newA = a;
+      let newB = b;
+      while (newB !== 0) {
+        const temp = newB;
+        newB = newA % newB;
+        newA = temp;
+      }
+      return newA;
+    };
+    const correctAnwear = String(getGCD(randomNumber1, randomNumber2));
+    return [question, correctAnwear];
+  };
+  playGame(task, gcdGame);
 };
+export default { playBrainGCD };

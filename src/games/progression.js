@@ -1,26 +1,25 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import readlineSync from 'readline-sync';
-import { getRandom } from "../index.js";
-
+import { playGame } from '../index.js';
+import { getRandomNumber } from '../utilits.js';
 
 export const playBrainProgression = () => {
-	const expressionLength = getRandom(5, 10);
-	let expressionElem = getRandom(1, 10);
-	const expressionPlus = getRandom(1, 5);
-	let correctAnwear;
-	let expression = [];
-	const newValue = '..'
-	for (let i = 0; i < expressionLength; i++) {
-		expression.push(String(expressionElem + expressionPlus));
-		expressionElem = expressionElem + expressionPlus;
-	}
-	const randomElem = getRandom(0, expression.length - 1);
-	correctAnwear = expression[randomElem];
-	expression[randomElem] = newValue;
+  const task = 'What number is missing in the progression?';
 
-	console.log(`Question: ${expression.join(' ')}`);
-
-	const userAnswear = readlineSync.question('Your answer: ');
-	return [correctAnwear, userAnswear];
+  const progressionGame = () => {
+    const expressionLength = getRandomNumber(5, 10);
+    let expressionElem = getRandomNumber(1, 10);
+    const expressionPlus = getRandomNumber(1, 5);
+    const expression = [];
+    const newValue = '..';
+    for (let i = 0; i < expressionLength; i += 1) {
+      expression.push(String(expressionElem + expressionPlus));
+      expressionElem += expressionPlus;
+    }
+    const randomElem = getRandomNumber(0, expression.length - 1);
+    const correctAnwear = expression[randomElem];
+    expression[randomElem] = newValue;
+    const question = `${expression.join(' ')}`;
+    return [question, correctAnwear];
+  };
+  playGame(task, progressionGame);
 };
+export default { playBrainProgression };
