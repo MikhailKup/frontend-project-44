@@ -72,3 +72,18 @@
 <br>
 
 ![Результат проигрыша](/demo/brain-progression_3.jpg)
+
+
+## Brain-prime 
+> Запуск команды brain-prime
+<br>
+
+![Запуск команды brain-prime](/demo/brain-prime_1.jpg)
+> Результат выигрыша  
+<br>
+
+![Результат выигрыша](/demo/brain-prime_2.jpg)
+> Результат проигрыша  
+<br>
+
+![Результат проигрыша](/demo/brain-prime_3.jpg)
