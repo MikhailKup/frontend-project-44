@@ -7,7 +7,7 @@ export const playBrainGCD = () => {
 	const randomNumber1 = getRandom(1, 10);
 	const randomNumber2 = getRandom(1, 10);
 
-	console.log(`Question: ${randomNumber1}  ${randomNumber2}`);
+	console.log(`Question: ${randomNumber1} ${randomNumber2}`);
 	const getGCD = (a, b) => {
 		while (b !== 0) {
 			var temp = b;
