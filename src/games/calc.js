@@ -1,5 +1,3 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
 import readlineSync from 'readline-sync';
 import { getRandom, getRandomOperator } from "../index.js";
 
