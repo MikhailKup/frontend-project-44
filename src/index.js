@@ -17,7 +17,7 @@ export const playGame = (task, game) => {
       }
     } else {
       console.log(
-        `'${userAnswear}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`
+        `'${userAnswear}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
