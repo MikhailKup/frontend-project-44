@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
@@ -18,11 +17,8 @@ export const playBrainProgression = () => {
     const randomElem = getRandomNumber(0, expression.length - 1);
     const correctAnwear = expression[randomElem];
     expression[randomElem] = newValue;
-
-    console.log(`Question: ${expression.join(' ')}`);
-
-    const userAnswear = readlineSync.question('Your answer: ');
-    return [correctAnwear, userAnswear];
+    const question = `${expression.join(' ')}`;
+    return [question, correctAnwear];
   };
   playGame(task, progressionGame);
 };

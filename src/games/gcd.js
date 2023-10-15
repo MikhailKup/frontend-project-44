@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
@@ -7,7 +6,7 @@ export const playBrainGCD = () => {
   const gcdGame = () => {
     const randomNumber1 = getRandomNumber(1, 10);
     const randomNumber2 = getRandomNumber(1, 10);
-    console.log(`Question: ${randomNumber1} ${randomNumber2}`);
+    const question = `${randomNumber1} ${randomNumber2}`;
     const getGCD = (a, b) => {
       let newA = a;
       let newB = b;
@@ -19,9 +18,7 @@ export const playBrainGCD = () => {
       return newA;
     };
     const correctAnwear = String(getGCD(randomNumber1, randomNumber2));
-
-    const userAnswear = readlineSync.question('Your answer: ');
-    return [correctAnwear, userAnswear];
+    return [question, correctAnwear];
   };
   playGame(task, gcdGame);
 };
