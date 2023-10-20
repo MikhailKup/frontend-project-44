@@ -12,14 +12,13 @@ export const playGame = (task, getRound) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === correctAnwear) {
-      console.log('Correct!');
-    } else {
+    if (userAnswer !== correctAnwear) {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`,
       );
       return console.log(`Let's try again, ${userName}!`);
     }
+    console.log('Correct!');
   }
   return console.log(`Congratulations, ${userName}!`);
 };

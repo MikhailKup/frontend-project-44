@@ -1,25 +1,27 @@
 import { playGame } from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
-export const playBrainProgression = () => {
-  const task = 'What number is missing in the progression?';
-
-  const progressionGame = () => {
-    const expressionLength = getRandomNumber(5, 10);
-    let expressionElem = getRandomNumber(1, 10);
-    const expressionPlus = getRandomNumber(1, 5);
-    const expression = [];
-    const newValue = '..';
-    for (let i = 0; i < expressionLength; i += 1) {
-      expression.push(String(expressionElem + expressionPlus));
-      expressionElem += expressionPlus;
-    }
-    const randomElem = getRandomNumber(0, expression.length - 1);
-    const correctAnwear = expression[randomElem];
-    expression[randomElem] = newValue;
-    const question = `${expression.join(' ')}`;
-    return [question, correctAnwear];
-  };
-  playGame(task, progressionGame);
+const createProgression = () => {
+  const length = getRandomNumber(5, 10);
+  let start = getRandomNumber(1, 10);
+  const step = getRandomNumber(1, 5);
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(String(start + step));
+    start += step;
+  }
+  return progression;
 };
+const task = 'What number is missing in the progression?';
+export const playBrainProgression = () => {
+  const progression = createProgression();
+  const hiddenElemIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnwear = progression[hiddenElemIndex];
+  const hiddenElem = '..';
+  progression[hiddenElemIndex] = hiddenElem;
+  const question = `${progression.join(' ')}`;
+  return [question, correctAnwear];
+};
+playGame(task, playBrainProgression);
+
 export default { playBrainProgression };
