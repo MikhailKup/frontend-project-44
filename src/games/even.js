@@ -1,19 +1,16 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
-export const playBrainEven = () => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-  let correctAnwear;
-  const evenGame = () => {
-    const randomNumber = getRandomNumber(1, 10);
-    const question = `${randomNumber}`;
-    if (randomNumber % 2 === 0) {
-      correctAnwear = 'yes';
-    } else {
-      correctAnwear = 'no';
-    }
-    return [question, correctAnwear];
-  };
-  playGame(task, evenGame);
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (num) => num % 2 === 0;
+
+const getRound = () => {
+  const randomNumber = getRandomNumber(1, 10);
+  const question = String(randomNumber);
+  const correctAnwear = isEven(randomNumber) ? 'yes' : 'no';
+  return [question, correctAnwear];
 };
-export default { playBrainEven };
+
+const playEven = () => playGame(task, getRound);
+
+export default playEven;
