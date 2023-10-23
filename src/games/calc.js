@@ -1,35 +1,36 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
 const operators = ['+', '-', '*'];
-let correctAnwear;
-let question;
+const task = 'What is the result of the expression?';
 
-const setRandomOperator = () => {
-  const indexOfOperator = getRandomNumber(0, operators.length - 1);
-  const operator = operators[indexOfOperator];
-  const randomNumber1 = getRandomNumber(1, 10);
-  const randomNumber2 = getRandomNumber(1, 10);
-  question = `${randomNumber1} ${operator} ${randomNumber2}`;
+const calculate = (number1, number2, operator) => {
   switch (operator) {
     case '+':
-      correctAnwear = String(randomNumber1 + randomNumber2);
-      break;
+      return number1 + number2;
     case '-':
-      correctAnwear = String(randomNumber1 - randomNumber2);
-      break;
+      return number1 - number2;
     case '*':
-      correctAnwear = String(randomNumber1 * randomNumber2);
-      break;
+      return number1 * number2;
     default:
-      throw new Error('Calculation error');
+      throw new Error('Wrong operator');
   }
 };
 
-const task = 'What is the result of the expression?';
-export const playBrainCalc = () => {
-  setRandomOperator();
+const setRandomOperator = (arr) => {
+  const indexOfOperator = getRandomNumber(0, arr.length - 1);
+  return arr[indexOfOperator];
+};
+
+const getRound = () => {
+  const randomNumber1 = getRandomNumber(1, 10);
+  const randomNumber2 = getRandomNumber(1, 10);
+  const operator = setRandomOperator(operators);
+  const question = `${randomNumber1} ${operator} ${randomNumber2}`;
+  const correctAnwear = String(calculate(randomNumber1, randomNumber2, operator));
   return [question, correctAnwear];
 };
-playGame(task, playBrainCalc);
-export default { playBrainCalc };
+
+playGame(task, getRound);
+
+export default getRound;

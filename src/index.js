@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const triesCount = 3;
 
-export const playGame = (task, getRound) => {
+const playGame = (task, getRound) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -16,10 +16,11 @@ export const playGame = (task, getRound) => {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnwear}'.`,
       );
-      return console.log(`Let's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
     console.log('Correct!');
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
-export default { playGame };
+export default playGame;

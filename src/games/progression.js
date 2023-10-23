@@ -1,8 +1,11 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
-const createProgression = () => {
-  const length = getRandomNumber(5, 10);
+const task = 'What number is missing in the progression?';
+const hiddenElement = '..';
+
+const createProgression = (minLength, maxLength) => {
+  const length = getRandomNumber(minLength, maxLength);
   let start = getRandomNumber(1, 10);
   const step = getRandomNumber(1, 5);
   const progression = [];
@@ -12,16 +15,16 @@ const createProgression = () => {
   }
   return progression;
 };
-const task = 'What number is missing in the progression?';
-export const playBrainProgression = () => {
-  const progression = createProgression();
-  const hiddenElemIndex = getRandomNumber(0, progression.length - 1);
-  const correctAnwear = progression[hiddenElemIndex];
-  const hiddenElem = '..';
-  progression[hiddenElemIndex] = hiddenElem;
+
+const getRound = () => {
+  const progression = createProgression(5, 10);
+  const hiddenElementIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnwear = progression[hiddenElementIndex];
+  progression[hiddenElementIndex] = hiddenElement;
   const question = `${progression.join(' ')}`;
   return [question, correctAnwear];
 };
-playGame(task, playBrainProgression);
 
-export default { playBrainProgression };
+playGame(task, getRound);
+
+export default getRound;
