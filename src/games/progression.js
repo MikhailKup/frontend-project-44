@@ -1,7 +1,6 @@
 import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
-const task = 'What number is missing in the progression?';
 const hiddenElement = '..';
 
 const createProgression = (minLength, maxLength) => {
@@ -25,6 +24,9 @@ const getRound = () => {
   return [question, correctAnwear];
 };
 
-playGame(task, getRound);
+const playProgression = () => {
+  const task = 'What number is missing in the progression?';
+  return playGame(task, getRound);
+};
 
-export default getRound;
+export default playProgression;

@@ -2,7 +2,6 @@ import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
 const operators = ['+', '-', '*'];
-const task = 'What is the result of the expression?';
 
 const calculate = (number1, number2, operator) => {
   switch (operator) {
@@ -31,6 +30,9 @@ const getRound = () => {
   return [question, correctAnwear];
 };
 
-playGame(task, getRound);
+const playCalc = () => {
+  const task = 'What is the result of the expression?';
+  return playGame(task, getRound);
+};
 
-export default getRound;
+export default playCalc;

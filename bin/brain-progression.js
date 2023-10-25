@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getRound from '../src/games/progression.js';
+import playProgression from '../src/games/progression.js';
 
-getRound();
+playProgression();
