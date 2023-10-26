@@ -2,31 +2,30 @@ import playGame from '../index.js';
 import { getRandomNumber } from '../utilits.js';
 
 const hiddenElement = '..';
+const task = 'What number is missing in the progression?';
 
-const createProgression = (minLength, maxLength) => {
-  const length = getRandomNumber(minLength, maxLength);
-  let start = getRandomNumber(1, 10);
-  const step = getRandomNumber(1, 5);
+const createProgression = (start, step, length) => {
   const progression = [];
+  let startingNum = start;
   for (let i = 0; i < length; i += 1) {
-    progression.push(String(start + step));
-    start += step;
+    progression.push(String(startingNum + step));
+    startingNum += step;
   }
   return progression;
 };
 
 const getRound = () => {
-  const progression = createProgression(5, 10);
+  const progressionLength = getRandomNumber(5, 10);
+  const progressionStart = getRandomNumber(1, 10);
+  const progressionStep = getRandomNumber(1, 5);
+  const progression = createProgression(progressionStart, progressionStep, progressionLength);
   const hiddenElementIndex = getRandomNumber(0, progression.length - 1);
   const correctAnwear = progression[hiddenElementIndex];
   progression[hiddenElementIndex] = hiddenElement;
-  const question = `${progression.join(' ')}`;
+  const question = progression.join(' ');
   return [question, correctAnwear];
 };
 
-const playProgression = () => {
-  const task = 'What number is missing in the progression?';
-  return playGame(task, getRound);
-};
+const playProgression = () => playGame(task, getRound);
 
 export default playProgression;
